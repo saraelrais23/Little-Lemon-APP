@@ -223,9 +223,17 @@ section {
 }
 .about .row .image {
     flex: 1 1 45rem;
+    display: flex;
+    justify-content: center;
 }
-.about .row .img {
+.about .row .image img {
     width: 100%;
+    max-width: 50rem;
+    height: auto;
+    object-fit: cover;
+    display: block;
+    border-radius: .5rem;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.3);
 }
 .about .row .content {
     flex: 1 1 45rem;
