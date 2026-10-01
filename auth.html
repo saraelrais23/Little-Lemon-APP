@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#010103">
+    <title>Account | Little Lemon</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="auth-page">
+    <header class="header auth-header">
+        <a href="index.html" class="logo" aria-label="Little Lemon home">
+            <img src="img/logo.png" alt="Little Lemon">
+        </a>
+        <a class="auth-home-link" href="index.html">Back to restaurant</a>
+        <button class="fas fa-moon header-icon" id="theme-btn" type="button" aria-label="Switch to light mode"></button>
+    </header>
+
+    <main class="auth-main">
+        <section class="auth-card" aria-labelledby="auth-title">
+            <p class="auth-eyebrow">Welcome to Little Lemon</p>
+            <h1 id="auth-title">Your account</h1>
+            <p class="auth-description">Sign in or create an account to continue.</p>
+            <div class="auth-tabs" role="tablist" aria-label="Account options">
+                <button class="auth-tab active" id="login-tab" type="button" role="tab" aria-selected="true" aria-controls="login-panel">Sign in</button>
+                <button class="auth-tab" id="signup-tab" type="button" role="tab" aria-selected="false" aria-controls="signup-panel">Create account</button>
+            </div>
+
+            <form class="auth-form" id="login-panel" role="tabpanel" aria-labelledby="login-tab">
+                <label>
+                    Email
+                    <input name="email" type="email" autocomplete="email" required maxlength="120">
+                </label>
+                <label>
+                    Password
+                    <input name="password" type="password" autocomplete="current-password" required minlength="8" maxlength="128">
+                </label>
+                <button class="btn" type="submit">Sign in</button>
+            </form>
+
+            <form class="auth-form" id="signup-panel" role="tabpanel" aria-labelledby="signup-tab" hidden>
+                <label>
+                    Name
+                    <input name="name" type="text" autocomplete="name" required maxlength="80">
+                </label>
+                <label>
+                    Email
+                    <input name="email" type="email" autocomplete="email" required maxlength="120">
+                </label>
+                <label>
+                    Password (at least 8 characters)
+                    <input name="password" type="password" autocomplete="new-password" required minlength="8" maxlength="128">
+                </label>
+                <label>
+                    Confirm password
+                    <input name="confirmPassword" type="password" autocomplete="new-password" required minlength="8" maxlength="128">
+                </label>
+                <button class="btn" type="submit">Create account</button>
+            </form>
+            <p class="form-message auth-message" id="auth-message" role="status" aria-live="polite"></p>
+            <p class="auth-disclaimer">Demo only: accounts are saved in this browser and are not connected to a secure server. Do not use a real or reused password.</p>
+        </section>
+    </main>
+    <script src="auth.js" defer></script>
+</body>
+
+</html>

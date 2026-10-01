@@ -7,7 +7,6 @@
     <title>Little Lemon</title>
     <meta name="Little Lemon" />
     <meta name="language" content="english">
-    <meta http-equiv="refresh" content="30">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <!--css file style-->
     <link rel="stylesheet" href="style.css">
@@ -25,29 +24,28 @@
             <a href="#menu">menu</a>
             <a href="#book">book</a>
             <a href="#opening">Open time</a>
+            <a href="auth.html" id="account-link">Sign in</a>
         </nav>
         <div class="icons">
-            <div class="fas fa-shopping-cart" id="cart-btn"></div>
-            <div class="fas fa-bars" id="menu-btn"></div>
+            <button class="fas fa-moon header-icon" id="theme-btn" type="button" aria-label="Switch to light mode"></button>
+            <button class="fas fa-shopping-cart header-icon" id="cart-btn" type="button" aria-label="Open cart, 0 items"></button>
+            <button class="fas fa-bars header-icon" id="menu-btn" type="button" aria-label="Open navigation"></button>
+            <button class="header-icon sign-out-button" id="sign-out-btn" type="button" hidden>Sign out</button>
         </div>
-        <div class="cart-items-container">
-            <div class="cart-items">
-                <span class="fas fa-times"></span>
-                <img src="img/blog2.jpg">
-                <div class="content">
-                    <h3>cart item 01</h3>
-                    <div class="price">$15.99</div>
-                </div>
+        <div class="cart-items-container" aria-label="Shopping cart">
+            <div class="cart-header">
+                <h2>Your cart</h2>
+                <button class="icon-button" id="close-cart" type="button" aria-label="Close cart">
+                    <i class="fas fa-times" aria-hidden="true"></i>
+                </button>
             </div>
-            <div class="cart-items">
-                <span class="fas fa-times"></span>
-                <img src="img/blog1.jpg">
-                <div class="content">
-                    <h3>cart item 02</h3>
-                    <div class="price">$15.99</div>
-                </div>
+            <div class="cart-items" id="cart-items" aria-live="polite"></div>
+            <p class="cart-empty" id="cart-empty">Your cart is empty.</p>
+            <div class="cart-summary">
+                <span>Subtotal</span>
+                <strong id="cart-total">$0.00</strong>
             </div>
-            <a href="#" class="btn">checkout now</a>
+            <button class="btn" id="checkout-btn" type="button" disabled>Continue to checkout</button>
         </div>
     </header>
     <!--section home page-->
@@ -77,131 +75,48 @@
     </section>
     <!-- section menu-->
     <section class="menu" id="menu">
-        <div class="menu" id="menu">
-            <h1 class="heading"><span>our</span> menu </h1>
-            <div class="box-container">
-                <div class="box">
-                    <img src="./img/cart1.jpg" alt="">
-                    <h3>tasty and healty</h3>
-                    <div class="price">$15.99 <span>20.99</span></div>
-                    <a href="#" class="btn">add to cart</a>
-                </div>
-                <div class="box">
-                    <img src="./img/cart2.jpg" alt="">
-                    <h3>tasty and healty</h3>
-                    <div class="price">$13.99 <span>16.97</span></div>
-                    <a href="#" class="btn">add to cart</a>
-                </div>
-                <div class="box">
-                    <img src="./img/cart5.jpg" alt="">
-                    <h3>tasty and healty</h3>
-                    <div class="price">$10.99 <span>14.97</span></div>
-                    <a href="#" class="btn">add to cart</a>
-                </div>
-                <div class="box">
-                    <img src="./img/cart3.jpg" alt="">
-                    <h3>tasty and healty</h3>
-                    <div class="price">$11.99 <span>13.97</span></div>
-                    <a href="#" class="btn">add to cart</a>
-                </div>
-                <div class="box">
-                    <img src="./img/cart4.jpg" alt="">
-                    <h3>tasty and healty</h3>
-                    <div class="price">$16.99 <span>19.97</span></div>
-                    <a href="#" class="btn">add to cart</a>
-                </div>
-            </div>
-        </div>
+        <h1 class="heading"><span>our</span> menu</h1>
+        <div class="box-container" id="menu-products"></div>
     </section>
     <!--book section-->
     <section class="book" id="book">
-        <h1 class="heading">our <span>book</span></h1>
-        <div class="box-container">
-            <div class="box">
-                <div class="icons">
-                    <a href="#" class="fas fa-shopping-cart"></a>
-                    <a href="#" class="fas fa-heart"></a>
-                    <a href="#" class="fas fa-eye"></a>
-                </div>
-                <div class="image">
-                    <img src="./img/product4.jpg" alt="">
-                </div>
-                <div class="content">
-                    <h3>Table for 2 person</h3>
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <a href="#" class="btn">book now</a>
-                </div>
-            </div>
-            <div class="box">
-                <div class="icons">
-                    <a href="#" class="fas fa-shopping-cart"></a>
-                    <a href="#" class="fas fa-heart"></a>
-                    <a href="#" class="fas fa-eye"></a>
-                </div>
-                <div class="image">
-                    <img src="./img/product3.jpg" alt="">
-                </div>
-                <div class="content">
-                    <h3>Table for 5 person</h3>
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <a href="#" class="btn">book now</a>
-                </div>
-            </div>
-            <div class="box">
-                <div class="icons">
-                    <a href="#" class="fas fa-shopping-cart"></a>
-                    <a href="#" class="fas fa-heart"></a>
-                    <a href="#" class="fas fa-eye"></a>
-                </div>
-                <div class="image">
-                    <img src="./img/product1.jpg" alt="">
-                </div>
-                <div class="content">
-                    <h3>Table for 4 person</h3>
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <a href="#" class="btn">book now</a>
-                </div>
-            </div>
-            <div class="box">
-                <div class="icons">
-                    <a href="#" class="fas fa-shopping-cart"></a>
-                    <a href="#" class="fas fa-heart"></a>
-                    <a href="#" class="fas fa-eye"></a>
-                </div>
-                <div class="image">
-                    <img src="./img/product2.jpg" alt="">
-                </div>
-                <div class="content">
-                    <h3>Table for 7 person</h3>
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <a href="#" class="btn">book now</a>
-                </div>
-            </div>
-        </div>
+        <h1 class="heading">table <span>reservation</span></h1>
+        <p class="section-intro">Choose a day and time, and we’ll have your table ready.</p>
+        <form class="reservation-form" id="reservation-form">
+            <label>
+                Your name
+                <input name="name" type="text" autocomplete="name" required maxlength="80">
+            </label>
+            <label>
+                Email
+                <input name="email" type="email" autocomplete="email" required maxlength="120">
+            </label>
+            <label>
+                Date
+                <input name="date" id="reservation-date" type="date" required>
+            </label>
+            <label>
+                Time
+                <input name="time" type="time" min="14:00" max="23:00" required>
+            </label>
+            <label>
+                Number of guests
+                <select name="guests" required>
+                    <option value="1">1 guest</option>
+                    <option value="2" selected>2 guests</option>
+                    <option value="3">3 guests</option>
+                    <option value="4">4 guests</option>
+                    <option value="5">5 guests</option>
+                    <option value="6">6 guests</option>
+                    <option value="7">7 guests</option>
+                    <option value="8">8 guests</option>
+                    <option value="9">9 guests</option>
+                    <option value="10">10 guests</option>
+                </select>
+            </label>
+            <button class="btn" type="submit">Request reservation</button>
+            <p class="form-message" id="reservation-message" role="status" aria-live="polite"></p>
+        </form>
     </section>
     <!-- section opening-->
     <section class="opening" id="opening">
@@ -235,22 +150,48 @@
         </div>
         <div class="credit">created by <span>sara elrais</span></div>
     </section>
-    <script>
-        let navbar = document.querySelector('.navbar');
-        document.querySelector('#menu-btn').onclick = () => {
-            navbar.classList.toggle('active');
-            cartitem.classList.remove('active');
-        }
-        let cartitem = document.querySelector('.cart-items-container');
-        document.querySelector('#cart-btn').onclick = () => {
-            cartitem.classList.toggle('active');
-            navbar.classList.remove('active');
-        }
-        window.onscroll = () => {
-            navbar.classList.remove('active');
-            cartitem.classList.remove('active');
-        }
-    </script>
+    <dialog class="checkout-dialog" id="checkout-dialog" aria-labelledby="checkout-title">
+        <form id="checkout-form">
+            <div class="dialog-header">
+                <h2 id="checkout-title">Checkout</h2>
+                <button class="icon-button" id="close-checkout" type="button" aria-label="Close checkout">
+                    <i class="fas fa-times" aria-hidden="true"></i>
+                </button>
+            </div>
+            <p class="checkout-note">Demo checkout only — no payment will be taken.</p>
+            <div id="checkout-summary" class="checkout-summary"></div>
+            <label>
+                Name
+                <input name="name" type="text" autocomplete="name" required maxlength="80">
+            </label>
+            <label>
+                Email
+                <input name="email" type="email" autocomplete="email" required maxlength="120">
+            </label>
+            <label>
+                Order type
+                <select name="orderType" required>
+                    <option value="Pickup">Pickup</option>
+                    <option value="Dine in">Dine in</option>
+                </select>
+            </label>
+            <button class="btn" type="submit">Place demo order</button>
+            <p class="form-message" id="checkout-message" role="status" aria-live="polite"></p>
+        </form>
+    </dialog>
+    <dialog class="checkout-dialog details-dialog" id="details-dialog" aria-labelledby="details-title">
+        <div class="dialog-header">
+            <h2 id="details-title"></h2>
+            <button class="icon-button" id="close-details" type="button" aria-label="Close details">
+                <i class="fas fa-times" aria-hidden="true"></i>
+            </button>
+        </div>
+        <img id="details-image" src="" alt="">
+        <p id="details-description"></p>
+        <strong id="details-price"></strong>
+        <button class="btn" id="details-add" type="button">Add to cart</button>
+    </dialog>
+    <script src="app.js" defer></script>
 </body>
 
 </html>
